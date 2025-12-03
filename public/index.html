@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Time-Travel Camera</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Time-Travel Camera</h1>
+      <p>Upload your photo and jump to any era in time.</p>
+    </header>
+
+    <main class="main-content">
+      <section class="upload-section">
+        <div id="drop-zone" class="drop-zone">
+          <input type="file" id="file-input" accept="image/png, image/jpeg" hidden />
+          <div class="drop-zone-content">
+            <p class="drop-title">Drag &amp; drop your image here</p>
+            <p class="drop-subtitle">or click to browse (JPG/PNG)</p>
+          </div>
+        </div>
+
+        <div class="controls">
+          <label for="era-select">Choose an era:</label>
+          <select id="era-select">
+            <option value="1940">1940 - Vintage monochrome</option>
+            <option value="1980">1980 - Retro neon VHS</option>
+            <option value="2050">2050 - Futuristic sci-fi</option>
+            <option value="3000">3000 - Hyper-futuristic</option>
+            <option value="prehistoric">Prehistoric - Cave painting</option>
+             <option value="custom">Custom style (type your own)</option>
+          </select>
+
+        <input
+            type="text"
+            id="custom-style-input"
+            class="custom-style-input"
+            placeholder="Describe the style you want (e.g. ‘anime cyberpunk portrait with neon lights’)"
+            style="display:none"
+        />
+
+          <button id="transform-btn" disabled>Transform Photo</button>
+        </div>
+
+        <div class="preview-wrapper">
+          <div class="image-box">
+            <h2>Original</h2>
+            <img id="input-preview" alt="Original Preview of your Photo" />
+          </div>
+          <div class="image-box">
+            <h2>Time-Travel Result</h2>
+            <div id="output-wrapper">
+              <div id="loader" class="loader hidden"></div>
+              <img id="output-image" alt="Transformed result" />
+            </div>
+            <button id="download-btn" class="download-btn" disabled>Download Result</button>
+          </div>
+        </div>
+
+        <p id="status-message" class="status-message"></p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Experience your past and future selves with AI-powered time-travel visuals.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
